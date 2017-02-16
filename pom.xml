@@ -25,11 +25,11 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>1.2.0</version>
-		</dependency>
+<!-- 		<dependency> mybatis 아직 못씀 -->
+<!-- 			<groupId>org.mybatis.spring.boot</groupId> -->
+<!-- 			<artifactId>mybatis-spring-boot-starter</artifactId> -->
+<!-- 			<version>1.2.0</version> -->
+<!-- 		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
@@ -49,6 +49,29 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- 1. JSP pre compiler  -->
+		<dependency>
+		    <groupId>org.apache.tomcat.embed</groupId>
+		    <artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+		
+		<!-- 2. BootStrap 의존의 전이 -->
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>bootstrap</artifactId>
+		    <version>3.3.7-1</version>
+		</dependency>
+		<!-- 3. animate 애니메이션을 쉽게 적용하게 해줌 -->
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>animate.css</artifactId>
+		    <version>3.5.2</version>
+		</dependency>
+		<!-- 4. JSTL scriptlet을 대신할 커스텀 태그 라이브러리-->
+		<dependency>
+	    	<groupId>javax.servlet</groupId>
+	    	<artifactId>jstl</artifactId>
+	    </dependency>
 	</dependencies>
 
 	<build>
