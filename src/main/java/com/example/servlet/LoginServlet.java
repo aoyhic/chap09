@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -48,6 +49,10 @@ public class LoginServlet extends HttpServlet{
 		
 		if ("hong".equals(id) && "1234".equals(pw)){
 			//인증성공. id는 hong, pw=1234 
+			Cookie login = new Cookie("login", "hong");
+			login.setPath("/");
+			//루트 이하의 패스에선 login, hong 쿠키를 계속 보내달라는 요청.
+			response.addCookie(login);
 			response.sendRedirect("/index.jsp");
 		} else {
 			//인증실패 
